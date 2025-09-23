@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformations of Functions Study Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            background-color: #ecf0f1;
+            padding: 8px;
+            border-left: 5px solid #3498db;
+            margin-top: 30px;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .graph-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+        .formula {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .note {
+            background-color: #fffde7;
+            padding: 15px;
+            border-left: 4px solid #ffd600;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transformations of Functions Study Guide</h1>
+    
+    <div class="section">
+        <h2>1. Vertical Shifting</h2>
+        <p>Vertical shifting moves the graph up or down without changing its shape.</p>
+        
+        <div class="formula">
+            y = f(x) + k
+        </div>
+        
+        <table>
+            <tr>
+                <th>Transformation</th>
+                <th>Equation</th>
+                <th>Effect</th>
+            </tr>
+            <tr>
+                <td>Shift Up</td>
+                <td>y = f(x) + k (k > 0)</td>
+                <td>Graph moves up by k units</td>
+            </tr>
+            <tr>
+                <td>Shift Down</td>
+                <td>y = f(x) - k (k > 0)</td>
+                <td>Graph moves down by k units</td>
+            </tr>
+        </table>
+        
+        <div class="graph-container">
+            <canvas id="verticalShiftGraph" width="400" height="300"></canvas>
+        </div>
+        
+        <div class="note">
+            <strong>Example:</strong> If f(x) = x², then f(x) + 3 = x² + 3 shifts the parabola up by 3 units.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>2. Horizontal Shifting</h2>
+        <p>Horizontal shifting moves the graph left or right without changing its shape.</p>
+        
+        <div class="formula">
+            y = f(x - h)
+        </div>
+        
+        <table>
+            <tr>
+                <th>Transformation</th>
+                <th>Equation</th>
+                <th>Effect</th>
+            </tr>
+            <tr>
+                <td>Shift Right</td>
+                <td>y = f(x - h) (h > 0)</td>
+                <td>Graph moves right by h units</td>
+            </tr>
+            <tr>
+                <td>Shift Left</td>
+                <td>y = f(x + h) (h > 0)</td>
+                <td>Graph moves left by h units</td>
+            </tr>
+        </table>
+        
+        <div class="graph-container">
+            <canvas id="horizontalShiftGraph" width="400" height="300"></canvas>
+        </div>
+        
+        <div class="note">
+            <strong>Example:</strong> If f(x) = x², then f(x - 2) = (x - 2)² shifts the parabola right by 2 units.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>3. Reflecting Graphs</h2>
+        <p>Reflections create mirror images of the graph across axes.</p>
+        
+        <div class="formula">
+            y = -f(x) or y = f(-x)
+        </div>
+        
+        <table>
+            <tr>
+                <th>Transformation</th>
+                <th>Equation</th>
+                <th>Effect</th>
+            </tr>
+            <tr>
+                <td>Reflection over x-axis</td>
+                <td>y = -f(x)</td>
+                <td>Graph flips vertically</td>
+            </tr>
+            <tr>
+                <td>Reflection over y-axis</td>
+                <td>y = f(-x)</td>
+                <td>Graph flips horizontally</td>
+            </tr>
+        </table>
+        
+        <div class="graph-container">
+            <canvas id="reflectionGraph" width="400" height="300"></canvas>
+        </div>
+        
+        <div class="note">
+            <strong>Example:</strong> If f(x) = x², then -f(x) = -x² reflects the parabola over the x-axis.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>4. Vertical Stretching and Shrinking</h2>
+        <p>Vertical stretching/shrinking changes the height of the graph.</p>
+        
+        <div class="formula">
+            y = a·f(x)
+        </div>
+        
+        <table>
+            <tr>
+                <th>Transformation</th>
+                <th>Equation</th>
+                <th>Effect</th>
+            </tr>
+            <tr>
+                <td>Vertical Stretch</td>
+                <td>y = a·f(x) (|a| > 1)</td>
+                <td>Graph becomes taller</td>
+            </tr>
+            <tr>
+                <td>Vertical Shrink</td>
+                <td>y = a·f(x) (0 < |a| < 1)</td>
+                <td>Graph becomes shorter</td>
+            </tr>
+        </table>
+        
+        <div class="graph-container">
+            <canvas id="verticalStretchGraph" width="400" height="300"></canvas>
+        </div>
+        
+        <div class="note">
+            <strong>Example:</strong> If f(x) = x², then 2f(x) = 2x² vertically stretches the parabola by a factor of 2.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>5. Horizontal Stretching and Shrinking</h2>
+        <p>Horizontal stretching/shrinking changes the width of the graph.</p>
+        
+        <div class="formula">
+            y = f(b·x)
+        </div>
+        
+        <table>
+            <tr>
+                <th>Transformation</th>
+                <th>Equation</th>
+                <th>Effect</th>
+            </tr>
+            <tr>
+                <td>Horizontal Shrink</td>
+                <td>y = f(b·x) (|b| > 1)</td>
+                <td>Graph becomes narrower</td>
+            </tr>
+            <tr>
+                <td>Horizontal Stretch</td>
+                <td>y = f(b·x) (0 < |b| < 1)</td>
+                <td>Graph becomes wider</td>
+            </tr>
+        </table>
+        
+        <div class="graph-container">
+            <canvas id="horizontalStretchGraph" width="400" height="300"></canvas>
+        </div>
+        
+        <div class="note">
+            <strong>Example:</strong> If f(x) = x², then f(2x) = (2x)² horizontally shrinks the parabola by a factor of 2.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>6. Even and Odd Functions</h2>
+        <p>Even and odd functions have specific symmetry properties.</p>
+        
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Definition</th>
+                <th>Symmetry</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Even Function</td>
+                <td>f(-x) = f(x)</td>
+                <td>Symmetric about y-axis</td>
+                <td>f(x) = x², f(x) = cos(x)</td>
+            </tr>
+            <tr>
+                <td>Odd Function</td>
+                <td>f(-x) = -f(x)</td>
+                <td>Symmetric about origin</td>
+                <td>f(x) = x³, f(x) = sin(x)</td>
+            </tr>
+            <tr>
+                <td>Neither</td>
+                <td>Doesn't satisfy either condition</td>
+                <td>No specific symmetry</td>
+                <td>f(x) = x² + x</td>
+            </tr>
+        </table>
+        
+        <div class="graph-container">
+            <canvas id="evenOddGraph" width="600" height="300"></canvas>
+        </div>
+        
+        <div class="note">
+            <strong>Test for Even/Odd:</strong><br>
+            1. Replace x with -x in the function<br>
+            2. Simplify the expression<br>
+            3. Compare with original function and -f(x)<br>
+            4. If f(-x) = f(x), it's even; if f(-x) = -f(x), it's odd; otherwise, neither.
+        </div>
+    </div>
+
+    <script>
+        // Function to draw coordinate axes
+        function drawAxes(ctx, width, height, xMin, xMax, yMin, yMax) {
+            const xScale = width / (xMax - xMin);
+            const yScale = height / (yMax - yMin);
+            
+            // Draw x-axis
+            ctx.beginPath();
+            ctx.moveTo(0, height - (0 - yMin) * yScale);
+            ctx.lineTo(width, height - (0 - yMin) * yScale);
+            ctx.strokeStyle = '#888';
+            ctx.stroke();
+            
+            // Draw y-axis
+            ctx.beginPath();
+            ctx.moveTo((0 - xMin) * xScale, 0);
+            ctx.lineTo((0 - xMin) * xScale, height);
+            ctx.strokeStyle = '#888';
+            ctx.stroke();
+        }
+        
+        // Function to plot a function
+        function plotFunction(ctx, f, xMin, xMax, yMin, yMax, width, height, color, lineWidth = 2) {
+            const xScale = width / (xMax - xMin);
+            const yScale = height / (yMax - yMin);
+            
+            ctx.beginPath();
+            ctx.strokeStyle = color;
+            ctx.lineWidth = lineWidth;
+            
+            for (let x = xMin; x <= xMax; x += 0.01) {
+                try {
+                    const y = f(x);
+                    if (y >= yMin && y <= yMax) {
+                        const canvasX = (x - xMin) * xScale;
+                        const canvasY = height - (y - yMin) * yScale;
+                        
+                        if (x === xMin) {
+                            ctx.moveTo(canvasX, canvasY);
+                        } else {
+                            ctx.lineTo(canvasX, canvasY);
+                        }
+                    }
+                } catch (e) {
+                    // Skip points where function is undefined
+                }
+            }
+            ctx.stroke();
+        }
+        
+        // Vertical Shift Graph
+        const verticalShiftCanvas = document.getElementById('verticalShiftGraph');
+        const vCtx = verticalShiftCanvas.getContext('2d');
+        drawAxes(vCtx, 400, 300, -5, 5, -5, 5);
+        plotFunction(vCtx, x => x*x, -5, 5, -5, 5, 400, 300, 'blue');
+        plotFunction(vCtx, x => x*x + 2, -5, 5, -5, 5, 400, 300, 'red');
+        plotFunction(vCtx, x => x*x - 2, -5, 5, -5, 5, 400, 300, 'green');
+        
+        // Horizontal Shift Graph
+        const horizontalShiftCanvas = document.getElementById('horizontalShiftGraph');
+        const hCtx = horizontalShiftCanvas.getContext('2d');
+        drawAxes(hCtx, 400, 300, -5, 5, -5, 5);
+        plotFunction(hCtx, x => x*x, -5, 5, -5, 5, 400, 300, 'blue');
+        plotFunction(hCtx, x => (x-2)*(x-2), -5, 5, -5, 5, 400, 300, 'red');
+        plotFunction(hCtx, x => (x+2)*(x+2), -5, 5, -5, 5, 400, 300, 'green');
+        
+        // Reflection Graph
+        const reflectionCanvas = document.getElementById('reflectionGraph');
+        const rCtx = reflectionCanvas.getContext('2d');
+        drawAxes(rCtx, 400, 300, -5, 5, -5, 5);
+        plotFunction(rCtx, x => x*x, -5, 5, -5, 5, 400, 300, 'blue');
+        plotFunction(rCtx, x => -(x*x), -5, 5, -5, 5, 400, 300, 'red');
+        plotFunction(rCtx, x => (-x)*(-x), -5, 5, -5, 5, 400, 300, 'green');
+        
+        // Vertical Stretch Graph
+        const verticalStretchCanvas = document.getElementById('verticalStretchGraph');
+        const vsCtx = verticalStretchCanvas.getContext('2d');
+        drawAxes(vsCtx, 400, 300, -3, 3, -5, 5);
+        plotFunction(vsCtx, x => x*x, -3, 3, -5, 5, 400, 300, 'blue');
+        plotFunction(vsCtx, x => 2*x*x, -3, 3, -5, 5, 400, 300, 'red');
+        plotFunction(vsCtx, x => 0.5*x*x, -3, 3, -5, 5, 400, 300, 'green');
+        
+        // Horizontal Stretch Graph
+        const horizontalStretchCanvas = document.getElementById('horizontalStretchGraph');
+        const hsCtx = horizontalStretchCanvas.getContext('2d');
+        drawAxes(hsCtx, 400, 300, -5, 5, -5, 5);
+        plotFunction(hsCtx, x => x*x, -5, 5, -5, 5, 400, 300, 'blue');
+        plotFunction(hsCtx, x => (2*x)*(2*x), -5, 5, -5, 5, 400, 300, 'red');
+        plotFunction(hsCtx, x => (0.5*x)*(0.5*x), -5, 5, -5, 5, 400, 300, 'green');
+        
+        // Even and Odd Functions Graph
+        const evenOddCanvas = document.getElementById('evenOddGraph');
+        const eoCtx = evenOddCanvas.getContext('2d');
+        drawAxes(eoCtx, 600, 300, -4, 4, -8, 8);
+        
+        // Even function (x^2)
+        plotFunction(eoCtx, x => x*x, -4, 4, -8, 8, 600, 300, 'blue');
+        
+        // Odd function (x^3)
+        plotFunction(eoCtx, x => x*x*x, -4, 4, -8, 8, 600, 300, 'red');
+        
+        // Neither (x^2 + x)
+        plotFunction(eoCtx, x => x*x + x, -4, 4, -8, 8, 600, 300, 'green');
+        
+        // Add legend for even/odd graph
+        eoCtx.fillStyle = 'blue';
+        eoCtx.fillRect(470, 20, 15, 15);
+        eoCtx.fillStyle = 'black';
+        eoCtx.font = '12px Arial';
+        eoCtx.fillText('Even: f(x) = x²', 490, 32);
+        
+        eoCtx.fillStyle = 'red';
+        eoCtx.fillRect(470, 45, 15, 15);
+        eoCtx.fillStyle = 'black';
+        eoCtx.fillText('Odd: f(x) = x³', 490, 57);
+        
+        eoCtx.fillStyle = 'green';
+        eoCtx.fillRect(470, 70, 15, 15);
+        eoCtx.fillStyle = 'black';
+        eoCtx.fillText('Neither: f(x) = x² + x', 490, 82);
+    </script>
+</body>
+</html>
